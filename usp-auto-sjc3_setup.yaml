@@ -1,0 +1,44 @@
+#Setup profile
+PLATFORM_NAME: usp-auto-sjc3
+NODE_TYPE: UCSC
+PLATFORM_PROFILE:  RHEL7.2_MITAKA
+
+#Node information
+#provide CIMC info, give IP:user:password
+NODE_MGMT_INFO:
+ - 10.23.250.106:admin:cisco123
+#provide server config info, give IP:hostname:role
+#role maybe one of:  os, compute, controller
+NODE_INSTALL_INFO:
+ - 10.23.250.113:usp-auto-sjc3:combo:Y
+#provide pxeboot interface slot (1 or 2) 
+NODE_PXE_IF_SLOT: 2
+
+#General network options
+CONTROLLER_IP: 10.23.250.113
+CONTROLLER_HOSTNAME: usp-auto-sjc3
+MGMT_IF: enp3s0f1
+MGMT_CIDR: 10.23.250.0/24
+MGMT_NETMASK: 255.255.255.0
+MGMT_GATEWAY: 10.23.250.1
+DNS_NAMESERVER: 171.70.168.183
+NTP_SERVER: 1.ntp.esl.cisco.com
+
+#Network options
+#tenant network for default virtio net
+TENANT_IF: enp3s0f0
+DEFAULT_TENANT_VLAN_RANGE: 1310:1400
+#up to two service networks maybe configured for provision net
+SERVICE_IF: enp1s0f0
+
+#Cinder options
+CONFIG_CINDER_VOLUMES_CREATE: y
+CONFIG_CINDER_VOLUMES_SIZE: 400000M
+
+#Advanced network options
+#If enabled, MTU=9000 will be configured for tenant and service nets
+CONFIG_ENABLE_JUMBO_FRAMES: True
+#If enabled DPDK will be configured for tenant and service nets with huge pages
+CONFIG_ENABLE_DPDK: False
+#If enabled SRIOV will be configured for service nets with 8 VF on each PF
+CONFIG_ENABLE_SRIOV: False
