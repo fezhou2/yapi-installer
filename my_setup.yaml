@@ -8,9 +8,9 @@ NODE_TYPE: UCSC
 #provide MGMT info, give IP:user:password  (for non-UCSB)
 #provide MGMT info, give IP:user:password:profilename  (for UCSB)
 NODE_MGMT_INFO:
- - 10.23.250.81:admin:cisco123
- - 10.23.250.82:admin:cisco123
- - 10.23.250.84:admin:cisco123
+ - 10.23.250.81:admin:test123
+ - 10.23.250.82:admin:test123
+ - 10.23.250.84:admin:test123
 #provide server config info, give IP:hostname:role:Flag   
 #flag will decide if the node will be installed
 #role maybe one of:  os, compute, controller, combo
@@ -29,7 +29,7 @@ MGMT_CIDR: 10.23.250.0/24
 MGMT_NETMASK: 255.255.255.0
 MGMT_GATEWAY: 10.23.250.1
 DNS_NAMESERVER: 171.70.168.183
-NTP_SERVER: 1.ntp.esl.cisco.com
+NTP_SERVER: 
 
 #Network options
 #tenant network for default virtio net
